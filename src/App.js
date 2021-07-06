@@ -63,63 +63,51 @@ export default function App() {
     }, [])
 
     if (state.isLoading) {
-        return <p > LOADING... < /p>
+        return <p> LOADING... </p>
     }
 
 
 
-            return (
+     return (
 
-            <
-        ThemeProvider theme={theme} >
-
-
-                <
-        Router >
-                    <
-        Switch >
-                        <
-        Route path="/"
+            <ThemeProvider theme={theme} >
+                <Router >
+                    <Switch >
+                        <Route path="/"
                             exact >
-                            <
-                                Redirect to="/login"
+                            <Redirect to="/login"
                                 exact />
-                            <
-        /Route>
+                        </Route>
 
-                            <
-                                PublicRoute component={login}
-                                isAuth={state.isAuth}
-                                restricted={true}
-                                path="/login"
-                                exact />
-                            <
-                                PublicRoute component={register}
-                                isAuth={state.isAuth}
-                                restricted={true}
-                                path="/register"
-                                exact />
+                        <PublicRoute component={login}
+                            isAuth={state.isAuth}
+                            restricted={true}
+                            path="/login"
+                            exact />
+                        <PublicRoute component={register}
+                            isAuth={state.isAuth}
+                            restricted={true}
+                            path="/register"
+                            exact />
 
-                            <
-                                PrivateRoute component={home}
-                                isAuth={state.isAuth}
-                                path="/home"
-                                exact />
+                        <PrivateRoute component={home}
+                            isAuth={state.isAuth}
+                            path="/home"
+                            exact />
 
-                            <
-                                PrivateRoute component={profile}
-                                isAuth={state.isAuth}
-                                path="/profile" />
+                        <PrivateRoute component={profile}
+                            isAuth={state.isAuth}
+                            path="/profile" />
 
 
-                            <
-                                Route component={NotFound}
-                            /> <
-        /Switch>
+                        <Route component={NotFound}
+                        />
+
+                    </Switch>
 
 
-                            <
-        /Router> <
-        /ThemeProvider >
-                            );
+
+                </Router>
+            </ThemeProvider >
+            );
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Nav from "../Components/nav"
-
 import dp from "../pic/profile.png"
 
 import firebase from "../utils/firebase";
@@ -23,25 +22,17 @@ export default function Profile() {
         }
     }, [])
 
-    return ( <
-        div className = "profilebg" >
-        <
-        Nav / >
-        <
-        Sidebar / >
-        <
-        div className = "dps" >
-        <
-        img src = { dp }
-        alt = "Logo" / >
-        <
-        /div> <
-        h1 class = "welcome" > { state.user ? state.user.email : "null" } < /h1> <
-        p class = "tag" > Email: { state.user ? state.user.email : "null" } < /p>
+    return (
+        <div className="profilebg">
+            <Nav />
+            <div className="dps">
+                <img src={dp} alt="Logo" />
+            </div>
+            <h1 class="welcome">{state.user ? state.user.email : "null"}</h1>
+            <p class="tag">Email : {state.user ? state.user.email : "null"}</p>
 
 
 
-        <
-        /div>
+        </div>
     )
 }

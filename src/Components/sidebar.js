@@ -12,49 +12,32 @@ import SidebarOptions from "../Posting/SidebarOptions";
 
 
 export default function Sidebar() {
-    return (<
-        div className="sidebar" >
+    return (
+        <div className="sidebar" >
 
-        <
-            img src="./assets/pusa1.png"
-            alt="" />
-        <
-            SidebarOptions active Icon={HomeIcon}
-            text="Home" /
-        >
-        <
-            SidebarOptions Icon={SearchIcon}
-            text="Explore" /
-        >
-        <
-            SidebarOptions Icon={NotificationsNoneIcon}
-            text="Notifications" /
-        >
-        <
-            SidebarOptions Icon={MailOutlineIcon}
-            text="Messages" /
-        >
-        <
-            SidebarOptions Icon={BookmarkBorderIcon}
-            text="Bookmarks" /
-        >
-        <
-            SidebarOptions Icon={ListAltIcon}
-            text="Lists" /
-        >
-        <
-            SidebarOptions Icon={PermIdentityIcon}
-            text="Profile" /
-        >
-        <
-            SidebarOptions Icon={MoreHorizIcon}
-            text="More" /
-        >
+            <img src="./assets/pusa1.png"
+                alt="" />
+            <SidebarOptions active Icon={HomeIcon}
+                text="Home" />
+            <SidebarOptions Icon={SearchIcon}
+                text="Explore" />
+            <SidebarOptions Icon={NotificationsNoneIcon}
+                text="Notifications" />
+            <SidebarOptions Icon={MailOutlineIcon}
+                text="Messages" />
+            <SidebarOptions Icon={BookmarkBorderIcon}
+                text="Bookmarks" />
+            <SidebarOptions Icon={ListAltIcon}
+                text="Lists" /
+            >
+            <SidebarOptions Icon={PermIdentityIcon}
+                text="Profile" />
+            <SidebarOptions Icon={MoreHorizIcon}
+                text="More" />
 
-        <
-        Button className="sidebar_meower"
-            variant="outlined" >
-            MEOWER < /Button>     <
-        /div>
-            );
+            <Button className="sidebar_meower"
+                variant="outlined">
+
+                MEOWER </Button>     </div>
+    );
 }

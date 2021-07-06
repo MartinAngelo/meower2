@@ -8,16 +8,11 @@ import "../Css/sidebar.css";
 function home() {
     return (
 
-        <
-        div className = "home" >
-        <
-        Nav / >
-        <
-        Sidebar / >
-        <
-        Feed / >
-        <
-        /div>
+        <div className = "home" >
+        <Nav />
+        <Sidebar />
+        <Feed />
+        </div>
 
     )
 }
