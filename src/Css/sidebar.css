@@ -1,0 +1,39 @@
+.sidebar {
+    border-right: 2px solid var(--meower-background);
+    flex: 0.3;
+    min-width: 250px;
+    margin-left: 20px;
+    margin-right: 0px;
+}
+
+.sidebar>img {
+    max-width: 50px;
+    height: 50px;
+}
+
+.sidebar_meowerIcon {
+    color: var(--meower-color);
+    font-size: 30px !important;
+    margin: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar_meower {
+    background-color: orange !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    height: 50px !important;
+    margin-top: 20px !important;
+    width: 60% !important;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
