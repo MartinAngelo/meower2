@@ -23,8 +23,10 @@ import theme from "./utils/theme";
 import profile from "./pages/profile";
 import NotFound from "./pages/404";
 import login from "./pages/login";
-import register from "./pages/register";
-import home from "./pages/home";
+import register from "./pages/register";    
+
+import timeline from "./pages/Timeline";
+
 
 
 
@@ -36,6 +38,7 @@ import PrivateRoute from "./Routers/PrivateRoute";
 import PublicRoute from "../src/Routers/PublicRoute";
 /**Firebase */
 import firebase from "./utils/firebase";
+import { Timeline } from "@material-ui/icons";
 
 
 
@@ -90,9 +93,9 @@ export default function App() {
                             path="/register"
                             exact />
 
-                        <PrivateRoute component={home}
+                        <PrivateRoute component={Timeline}
                             isAuth={state.isAuth}
-                            path="/home"
+                            path="/timeline"
                             exact />
 
                         <PrivateRoute component={profile}
