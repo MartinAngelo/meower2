@@ -1,116 +1,15 @@
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-    Redirect,
-} from "react-router-dom";
-
-
-
+import React from 'react'
 import "./App.css";
-import "./Css/login.css";
-import "./Css/nav.css";
-import "./Css/home.css";
-
-import React, { useState, useEffect } from "react"
-
-/*material-ui*/
-import { ThemeProvider } from "@material-ui/core";
-import theme from "./utils/theme";
-
-/**Pages */
-
-import profile from "./pages/profile";
-import NotFound from "./pages/404";
-import login from "./pages/login";
-import register from "./pages/register";    
-
-import timeline from "./pages/Timeline";
 
 
 
-
-
-
-
-/**Route*/
-import PrivateRoute from "./Routers/PrivateRoute";
-import PublicRoute from "../src/Routers/PublicRoute";
-/**Firebase */
-import firebase from "./utils/firebase";
-import { Timeline } from "@material-ui/icons";
-
-
-
+// import Sidebar from "./Sidebar"; //
+import Feed from "./Feed";
 export default function App() {
-
-
-    //loading
-    const [state, setState] = useState({
-        isAuth: false,
-        isLoading: true,
-    })
-
-
-
-    useEffect(() => {
-        firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                setState({ isAuth: true, isLoading: false })
-            } else {
-                //NO USER IS SIGN IN
-                setState({ isAuth: false, isLoading: false })
-            }
-            console.log(user)
-        });
-    }, [])
-
-    if (state.isLoading) {
-        return <p> LOADING... </p>
-    }
-
-
-
-     return (
-
-            <ThemeProvider theme={theme} >
-                <Router >
-                    <Switch >
-                        <Route path="/"
-                            exact >
-                            <Redirect to="/login"
-                                exact />
-                        </Route>
-
-                        <PublicRoute component={login}
-                            isAuth={state.isAuth}
-                            restricted={true}
-                            path="/login"
-                            exact />
-                        <PublicRoute component={register}
-                            isAuth={state.isAuth}
-                            restricted={true}
-                            path="/register"
-                            exact />
-
-                        <PrivateRoute component={Timeline}
-                            isAuth={state.isAuth}
-                            path="/timeline"
-                            exact />
-
-                        <PrivateRoute component={profile}
-                            isAuth={state.isAuth}
-                            path="/profile" />
-
-
-                        <Route component={NotFound}
-                        />
-
-                    </Switch>
-
-
-
-                </Router>
-            </ThemeProvider >
-            );
+    return ( 
+        < div className = "App" >
+     
+        <Feed /> 
+        </div>
+    );
 }
